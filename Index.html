@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone Portfolio | Laureen Mburu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #00e5ff;
+            --bg-dark: #000000; 
+            --bg-card: #111111;
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        #bg-canvas {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+        }
+
+        header {
+            position: fixed;
+            top: 0; width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-box {
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .hero-layout {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            max-width: 1000px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            object-fit: cover;
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.4);
+        }
+
+        section:not(#hero) {
+            padding: 100px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid #222;
+        }
+
+        .section-title { color: var(--primary-color); font-size: 2rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 2px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .card { background: var(--bg-card); padding: 2rem; border-radius: 12px; border: 1px solid #333; transition: var(--transition); }
+        .card:hover { border-color: var(--primary-color); transform: translateY(-5px); }
+
+        .btn-main {
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-main:hover { background: var(--primary-color); color: #000; }
+
+        .lang-links { margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; }
+        .btn-lang {
+            padding: 6px 12px;
+            border: 1px solid #444;
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-radius: 4px;
+        }
+        .btn-lang:hover { border-color: var(--primary-color); color: var(--primary-color); }
+
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        .social-icons a {
+            color: var(--text-gray);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .hero-layout { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <header>
+        <nav>
+            <div class="logo-box">LM</div>
+            <div>LAUREEN MBURU | C025-01-0869/2022</div>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-layout">
+            <img src="MePhoto.png" alt="Laureen Mburu" class="profile-img">
+            <div class="hero-text-content">
+                <h1>LAUREEN MBURU</h1>
+                <p class="reg-label" style="color:var(--primary-color); font-weight:bold;">REGISTRATION NO:</p>
+                <p>C025-01-0869/2022</p>
+            </div>
+        </div>
+        <p style="max-width: 800px; color: var(--text-gray);">
+            I am a dedicated IT student proficient in <strong>Web Development, UI/UX Design, and Systems Analysis</strong>. This portfolio integrates my technical expertise with African culture and societal problem-solving through innovative digital solutions.
+        </p>
+        <a href="#cv" class="btn-main" style="margin-top: 30px; padding: 15px 40px;">Explore Portfolio</a>
+    </section>
+
+    <section id="cv">
+        <h2 class="section-title">01. Professional Résumé</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>English CV</h3>
+                <a href="https://drive.google.com/file/d/1by6tuCi-ucUoiYseyjH_J8i3bQjG4HaI/view?usp=sharing" target="_blank" class="btn-main">View English</a>
+            </div>
+            <div class="card">
+                <h3>Kiswahili (Wasifu)</h3>
+                <a href="https://drive.google.com/file/d/19u-s6sGw_SA2_4FkWLv6hUiAuoRjdJAw/view?usp=sharing" target="_blank" class="btn-main">Tazama Kiswahili</a>
+            </div>
+            <div class="card">
+                <h3>Kikuyu (Ũhoro wa Wĩra)</h3>
+                <a href="https://drive.google.com/file/d/1afLTJarcoP2IyV7oLAQAKJijzeGcvwkO/view?usp=sharing" target="_blank" class="btn-main">Thoma Gĩkũyũ</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="bio">
+        <h2 class="section-title">02. Autobiography</h2>
+        <div class="card">
+            <h3>My Journey: From Kadeto to DeKUT</h3>
+            <p>A reflective account of my growth and family roots.</p>
+            <a href="https://docs.google.com/document/d/1gANCweF8ae7xuCB72pXezX514ZOb88fT/edit?usp=sharing&ouid=109024340414712021239&rtpof=true&sd=true" target="_blank" class="btn-main">Read Full Story</a>
+        </div>
+    </section>
+
+    <section id="culture">
+        <h2 class="section-title">03. Traditional African Aspect</h2>
+        <div class="grid-3">
+            <div class="card" style="grid-column: span 2;">
+                <h3>Marriage & Rites of Passage</h3>
+                <div class="lang-links">
+                    <a href="https://drive.google.com/file/d/1IIh0tjFUjTS8yIBC430Hrt25yv7N63BN/view?usp=sharing" target="_blank" class="btn-lang">English Abstract</a>
+                    <a href="https://drive.google.com/file/d/1xGvWEUb5UfICHFI5W7Lw40abOvMHrDEl/view?usp=sharing" target="_blank" class="btn-lang">Kiswahili Abstract</a>
+                    <a href="https://drive.google.com/file/d/1G7p0bdaXzT9IbNPyISu2uuOTy26RXHjT/view?usp=sharing" target="_blank" class="btn-lang">Kikuyu Abstract</a>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Showcase</h3>
+                <a href="https://drive.google.com/file/d/1_1VJ8eXRA1nSersvyzuOxzgh2R51_Gbk/view?usp=sharing" target="_blank" class="btn-main" style="display:block; margin-bottom:10px;">View Slides</a>
+                <a href="https://drive.google.com/file/d/1o5Vt3FeTHYDVZqAJHld4BPoLxcWIp3om/view?usp=sharing" target="_blank" class="btn-main" style="display:block;">View Video</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="photo">
+        <h2 class="section-title">04. Photographic Essay</h2>
+        <div class="card">
+            <h3>Communalism in Kenyan Communities</h3>
+            <p>Visual exploration of unity and "Ngwatio".</p>
+            <a href="https://drive.google.com/file/d/1m8ZK_SPx7o0AIpwzuSF6Q3DTjWikyFHQ/view?usp=sharing" target="_blank" class="btn-main">View Essay</a>
+        </div>
+    </section>
+
+    <section id="society">
+        <h2 class="section-title">05. Problems Facing Modern Society</h2>
+        <div class="grid-3">
+            <div class="card" style="grid-column: span 2;">
+                <h3>Waste Management Problem</h3>
+                <div class="lang-links">
+                    <a href="https://drive.google.com/file/d/1SIr5c0CJFn6R7WjAGONzjjnxIvVy5Emb/view?usp=sharing" target="_blank" class="btn-lang">English Abstract</a>
+                    <a href="https://drive.google.com/file/d/1pFTwnPQJd8pgbIMCg0pEcnYn0tDKqpuh/view?usp=sharing" target="_blank" class="btn-lang">Kiswahili Abstract</a>
+                    <a href="https://drive.google.com/file/d/1pFTwnPQJd8pgbIMCg0pEcnYn0tDKqpuh/view?usp=sharing" target="_blank" class="btn-lang">Kikuyu Abstract</a>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Technical Solution</h3>
+                <a href="https://docs.google.com/presentation/d/1_0arwDDIQs4vz03Dh0Eq3iLeUrHBnSly/edit?usp=sharing&ouid=109024340414712021239&rtpof=true&sd=true" target="_blank" class="btn-main" style="display:block; margin-bottom:10px;">View PPT</a>
+                <a href="https://drive.google.com/file/d/1o5NUlR1gwy-cMn7OEeHvWPbGB7_uv1UH/view?usp=sharing" target="_blank" class="btn-main" style="display:block;">View Video</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="innovation">
+        <h2 class="section-title">06. Innovation in My Field</h2>
+        <div class="grid-3">
+            <div class="card" style="grid-column: span 2;">
+                <h3>Doctor Appointment Booking System</h3>
+                <div class="lang-links">
+                    <a href="https://drive.google.com/file/d/1wtv1Jd5zV232KwilKE_xabnA8kxcL0-y/view?usp=sharing" target="_blank" class="btn-lang">English Abstract</a>
+                    <a href="https://drive.google.com/file/d/1yfRz3sD-6evZ6YXIEKyFvwSHsY_utDrZ/view?usp=sharing" target="_blank" class="btn-lang">Kiswahili Abstract</a>
+                    <a href="https://drive.google.com/file/d/1yfRz3sD-6evZ6YXIEKyFvwSHsY_utDrZ/view?usp=sharing" target="_blank" class="btn-lang">Kikuyu Abstract</a>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Project Showcase</h3>
+                <a href="https://drive.google.com/file/d/1zH84wRb3xGxngu43jOYCZf6YZd7eAxVI/view?usp=sharing" target="_blank" class="btn-main" style="display:block; margin-bottom:10px;">View Video</a>
+                <a href="https://drive.google.com/file/d/1eUoyhTOe1fkrz2hHklbJps966osDsZbP/view?usp=sharing" target="_blank" class="btn-main" style="display:block;">View Slides</a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; color: #444; font-size: 0.8rem;">
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/mburu-laureen-wambui-9238b73a9" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/laureen_codes" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/bobs8759" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1MiYxHrgmA/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/bobs8759" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <br>
+        &copy; 2024 Laureen Mburu - DeKUT Capstone Portfolio
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let particlesArray = [];
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+            }
+            update() {
+                this.x += this.speedX; this.y += this.speedY;
+                if (this.x > canvas.width) this.x = 0; if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0; if (this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(0, 229, 255, 0.3)';
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+            }
+        }
+        function init() {
+            particlesArray = [];
+            for (let i = 0; i < 100; i++) { particlesArray.push(new Particle()); }
+        }
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update(); particlesArray[i].draw();
+            }
+            requestAnimationFrame(animate);
+        }
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth; canvas.height = window.innerHeight; init();
+        });
+        init(); animate();
+    </script>
+</body>
+</html>
