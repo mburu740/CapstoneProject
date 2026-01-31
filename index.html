@@ -84,7 +84,6 @@
             box-shadow: 0 0 30px rgba(0, 229, 255, 0.4);
         }
 
-        /* Bio and Roles Layout */
         .bio-container {
             display: flex;
             gap: 40px;
@@ -96,11 +95,10 @@
 
         .bio-text { flex: 1.5; }
 
-        /* Roles Transitioning Design */
         .roles-showcase {
             flex: 1;
             position: relative;
-            height: 180px; /* Space for 2 items */
+            height: 180px; 
             overflow: hidden;
         }
 
@@ -111,7 +109,8 @@
             flex-direction: column;
             gap: 15px;
             opacity: 0;
-            transition: opacity 1s ease-in-out;
+            /* SLOWER TRANSITION ANIMATION */
+            transition: opacity 2s ease-in-out;
             pointer-events: none;
         }
 
@@ -217,7 +216,7 @@
             <img src="https://lh3.googleusercontent.com/d/1D5BG8hpxcWoqcf7YVA9eQsdZ1E-8Tddp" alt="Laureen Mburu" class="profile-img">
             <div class="hero-text-content">
                 <h1>LAUREEN MBURU</h1>
-                <p class="reg-label" style="color:var(--primary-color); font-weight:bold;">REGISTRATION NO:</p>
+                <p style="color:var(--primary-color); font-weight:bold; letter-spacing: 1px;">ASPIRING IT PROFESSIONAL & INNOVATOR</p>
                 <p>C025-01-0869/2022</p>
             </div>
         </div>
@@ -225,7 +224,7 @@
         <div class="bio-container">
             <div class="bio-text">
                 <p style="color: var(--text-gray);">
-                    I am a dedicated IT student proficient in <strong>Web Development, UI/UX Design, and Systems Analysis</strong>. This portfolio integrates my technical expertise with African culture and societal problem-solving through innovative digital solutions.
+                    Driven by a passion for technical excellence and cultural storytelling, I focus on building digital systems that solve real-world problems. By blending advanced web development with deep analytical insights, I aim to create inclusive solutions that empower communities and honor African heritage through modern innovation.
                 </p>
                 <a href="#cv" class="btn-main" style="margin-top: 30px; padding: 15px 40px;">Explore Portfolio</a>
             </div>
@@ -413,7 +412,7 @@
         });
         init(); animate();
 
-        /* Roles Transition Script */
+        /* UPDATED: SMOOTHER ROLES TRANSITION SCRIPT */
         const group1 = document.getElementById('group1');
         const group2 = document.getElementById('group2');
         
@@ -425,7 +424,7 @@
                 group2.classList.remove('active');
                 group1.classList.add('active');
             }
-        }, 4000); // Transitions every 4 seconds
+        }, 6000); // STAYS ON SCREEN FOR 6 SECONDS
     </script>
 </body>
 </html>
